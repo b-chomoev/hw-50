@@ -2,9 +2,11 @@
     display: inline-block;
     margin: 10px;
     border: 1px solid #eee;
-    box-shadow: 0 2px 2px #ccc;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     width: auto;
     padding: 20px;
+    transition: background-color 0.3s ease;
+
 }
 
 .card:hover {

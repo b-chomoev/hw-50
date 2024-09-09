@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style-2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Header = (props) => {
+            return (
+                <header className="header">
+                    <h1 className="header-title">{props.header}</h1>
+                </header>
+            )
+        }
+
+        const SideBar = (props) => {
+            return (
+                <aside className="side-nav">
+                    <a href="#">{props.textOne}</a>
+                    <a href="#">{props.textTwo}</a>
+                    <a href="#">{props.textThree}</a>
+                    <a href="#">{props.textFour}</a>
+                    <a href="#">{props.textFive}</a>
+                </aside>
+            )
+        }
+
+        const MainContent = (props) => {
+            return (
+                <div className="main">
+                    <h2 className="main-title">{props.title}</h2>
+                    <p className="main-text">{props.textOne}</p>
+                    <p className="main-text">{props.textTwo}</p>
+                    <img src={props.src} alt=""/>
+                </div>
+            )
+        }
+
+        const Footer = (props) => {
+            return (
+                <footer className="footer">
+                    <p>{props.text}</p>
+                </footer>
+            )
+        }
+
+        const container = (
+            <>
+                <Header header='Eloquent JavaScript Third Edition by Marjin Haverbeke'/>
+                <SideBar
+                    textOne='Introduction'
+                    textTwo='Functions'
+                    textThree='Data Structures: Objects and Arrays'
+                    textFour='The Secret Life of Objects'
+                    textFive='Asynchronous Programming'
+                />
+                <MainContent
+                    title='Welcome to Eloquent JS!'
+                    textOne="Welcome to Eloquent JavaScript, your comprehensive guide to mastering the
+                            art of programming with JavaScript. Whether you're a complete beginner or an experienced
+                            developer looking to deepen your understanding, Eloquent JavaScript offers a journey through
+                            the fundamentals of programming, the intricacies of JavaScript, and the principles of computer
+                            science. With its clear explanations, practical examples, and interactive exercises, this
+                            resource empowers you to not only write code but to think like a programmer. Dive in, explore,
+                            and embark on your path to becoming an eloquent JavaScript developer."
+                    textTwo="Within the pages of Eloquent JavaScript, you'll embark on a transformative
+                            journey through the rich and dynamic world of JavaScript. This comprehensive guide is designed
+                            to equip you with the essential knowledge and practical skills needed to navigate the
+                            complexities of modern web development. Starting from the very basics and gradually progressing
+                            to more advanced concepts, you'll gain a deep understanding of JavaScript's core principles,
+                            syntax, and best practices. Through clear explanations, insightful examples, and hands-on
+                            exercises, you'll learn how to write clean, efficient, and maintainable code that powers
+                            interactive and responsive web applications. From mastering fundamental concepts such as
+                            variables, loops, and functions, to exploring complex topics like closures, prototypes, and
+                            modules, Eloquent JavaScript provides a thorough exploration of the language's capabilities.
+                            Moreover, you'll discover how to leverage the latest features of JavaScript, including ES6 and
+                            beyond, to write modern, future-proof code. Whether you're a novice programmer or an experienced
+                            developer looking to sharpen your skills, Eloquent JavaScript offers a comprehensive and
+                            engaging learning experience that will empower you to confidently tackle any JavaScript project
+                            with skill and finesse."
+                    src='https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
+                />
+                <Footer text='&copy; 2024 Eloquent JavaScript. All rights reserved.'/>
+            </>
+        )
+
+        const root = document.getElementById('root');
+        ReactDOM.createRoot(root).render(container);
+    </script>
+</body>
+</html>
