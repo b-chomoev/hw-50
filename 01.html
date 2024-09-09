@@ -1,10 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
+<div id="root"></div>
 
+<script type="text/babel">
+    const Card = ({logo, name, year}) => {
+        return (
+            <div className="card">
+                <img src={logo} alt={name}/>
+                <h2>Name: {name}</h2>
+                <p>Year: {year}</p>
+            </div>
+        )
+    };
+
+    const logos = {
+        avengers: 'https://logos-world.net/wp-content/uploads/2020/05/Avengers-Age-of-Ultron-Logo-2015.jpg',
+        inventingAnna: 'https://odysseynewsmagazine.net/wp-content/uploads/2022/03/Inventing-Anna-Visual.jpg',
+        spotify: 'https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg',
+    }
+
+    const movies = [
+        {logo: logos.avengers, name: 'Avengers', year: 2012},
+        {logo: logos.inventingAnna, name: 'Inventing Anna', year: 2021},
+        {logo: logos.spotify, name: 'The Playlist', year: 2022}
+    ]
+
+    const movieCards = movies.map(movie => {
+        return (
+            <Card logo={movie.logo} name={movie.name} year={movie.year} />
+        )
+    });
+
+    const root = document.getElementById('root');
+    ReactDOM.createRoot(root).render(movieCards);
+</script>
 </body>
 </html>

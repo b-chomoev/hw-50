@@ -1,0 +1,29 @@
+.card {
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    width: auto;
+    padding: 20px;
+}
+
+.card:hover {
+    background-color: #f3f4f6;
+}
+
+.card h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+img {
+    width: 250px;
+}
